@@ -14,9 +14,11 @@ namespace MinhTriShop.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+
         [Required]
         [MaxLength(256)]
         public string CustomerName { get; set; }
+
         [Required]
         [MaxLength(256)]
         public string  CustomerAddress { get; set; }

@@ -11,13 +11,19 @@ namespace MinhTriShop.Model.Models
     [Table("OrderDetails")]
     public class OrderDetail
     {
-        [Key]        
-        public int OrderID { get; set; }
         [Key]
+        [Column(Order = 1)]
+        public int OrderID { get; set; }
+
+        [Key]
+        [Column(Order = 2)]
         public int ProductID { get; set; }
+
         public int Quantity { get; set; }
+
         [ForeignKey("OrderID")]
         public virtual Order Order { get; set; }
+
         [ForeignKey("ProductID")]
         public virtual Product Product { get; set; }
     }
