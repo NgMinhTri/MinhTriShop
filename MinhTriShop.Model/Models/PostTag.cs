@@ -12,14 +12,16 @@ namespace MinhTriShop.Model.Models
     public class PostTag
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 1)]
         public int PostID { get; set; }
         [Key]
-        [Required]
-        [Column(TypeName ="varchar")]
+        [Column(TypeName = "varchar", Order = 2)]
+        [MaxLength(50)]
         public string TagID { get; set; }
+
         [ForeignKey("PostID")]
         public virtual Post Post { get; set; }
+
         [ForeignKey("TagID")]
         public virtual Tag  Tag{ get; set; }
     }
