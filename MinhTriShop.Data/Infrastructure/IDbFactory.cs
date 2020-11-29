@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MinhTriShop.Data.Infrastructure
 {
-    public interface IDbFactory
+    public interface IDbFactory : IDisposable
     {
-        
+        MinhTriShopDbContext Init();
     }
 }
