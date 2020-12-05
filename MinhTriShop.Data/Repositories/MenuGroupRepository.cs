@@ -10,6 +10,7 @@ namespace MinhTriShop.Data.Repositories
 {
     public interface IMenuGroupRepository : IRepository<MenuGroup>
     {
+
     }
 
     public class MenuGroupRepository : RepositoryBase<MenuGroup>, IMenuGroupRepository

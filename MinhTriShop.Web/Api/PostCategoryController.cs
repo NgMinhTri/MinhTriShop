@@ -13,7 +13,7 @@ namespace MinhTriShop.Web.Api
         // GET api/<controller>
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value5" };
         }
 
         // GET api/<controller>/5
@@ -36,6 +36,7 @@ namespace MinhTriShop.Web.Api
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+
         }
     }
 }

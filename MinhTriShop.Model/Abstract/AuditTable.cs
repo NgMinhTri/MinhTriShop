@@ -9,6 +9,7 @@ namespace MinhTriShop.Model.Abstract
 {
     public abstract class AuditTable:IAuditTable
     {
+       
         public DateTime? CreatedDate { get; set; }
         [MaxLength(256)]
         public string CreatedBy { set; get; }
