@@ -8,7 +8,7 @@ namespace MinhTriShop.Model.Abstract
 {
     public interface IAuditTable
     {
-        DateTime? CreatedDate { get; set; }
+         DateTime? CreatedDate { get; set; }
         string CreatedBy { set; get; }
         DateTime? UpdatedDate { set; get; }
         string UpdatedBy { set; get; }
