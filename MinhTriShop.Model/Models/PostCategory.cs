@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinhTriShop.Model.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace MinhTriShop.Model.Models
 {
     [Table("PostCategories")]
-    public class PostCategory
+    public class PostCategory : AuditTable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

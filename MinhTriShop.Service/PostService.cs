@@ -27,6 +27,8 @@ namespace MinhTriShop.Service
 
         IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
 
+        IEnumerable<Post> GetAllByCategoryPaging(int categoryid, int page, int pageSize, out int totalRow);
+
         void SaveChange();
 
     }
@@ -60,9 +62,16 @@ namespace MinhTriShop.Service
             return _postRepository.GetAll(new string[] { "PostCategory" });  
         }
 
+        public IEnumerable<Post> GetAllByCategoryPaging(int categoryid, int page, int pageSize, out int totalRow)
+        {
+            return _postRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryid, out totalRow, page, pageSize, new string[] {"PostCategory"});// mảng string
+        }
+
+       
+
         public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
         {
-            return _postRepository.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
+            return _postRepository.GetAllByTag(tag, page, pageSize, out totalRow);
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
