@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinhTriShop.Model.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace MinhTriShop.Model.Models
 {
     [Table("Posts")]
-    public class Post
+    public class Post : AuditTable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -34,6 +35,8 @@ namespace MinhTriShop.Model.Models
         public int? ViewCount { get; set; }
         [ForeignKey("CategoryID")]
         public virtual PostCategory  PostCategory{ get; set; }
+
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
 
     }
 }

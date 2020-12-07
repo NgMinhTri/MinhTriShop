@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MinhTriShop.Data.Repositories
 {
-    public interface IProductCategoryrepository
+    public interface IProductCategoryrepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }
