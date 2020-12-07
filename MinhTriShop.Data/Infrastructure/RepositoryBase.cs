@@ -10,6 +10,7 @@ namespace MinhTriShop.Data.Infrastructure
 {
     public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
+    
         #region Properties
         private MinhTriShopDbContext dataContext;
         private readonly IDbSet<T> dbSet;
@@ -46,6 +47,12 @@ namespace MinhTriShop.Data.Infrastructure
 
         public virtual void Delete(T entity)
         {
+            dbSet.Remove(entity);
+        }
+
+        public virtual void Delete(int id)
+        {
+            var entity = dbSet.Find(id);
             dbSet.Remove(entity);
         }
 
@@ -132,6 +139,8 @@ namespace MinhTriShop.Data.Infrastructure
         {
             return dataContext.Set<T>().Count<T>(predicate) > 0;
         }
+
+      
         #endregion
     }
 }

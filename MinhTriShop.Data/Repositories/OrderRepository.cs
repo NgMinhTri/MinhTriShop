@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MinhTriShop.Data.Repositories
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IRepository<Order>
     {
     }
 

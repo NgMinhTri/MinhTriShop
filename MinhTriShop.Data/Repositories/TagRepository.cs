@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MinhTriShop.Data.Repositories
 {
-    public interface ITagRepository
+    public interface ITagRepository : IRepository<Tag>
     {
     }
 
